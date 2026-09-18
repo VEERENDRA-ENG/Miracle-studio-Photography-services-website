@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Photoshoot | Miracle Studio Photography</title>
+  <meta name="description" content="Reserve your photoshoot with Miracle Studio Photography. Enquire for weddings, pre-weddings, portraits, events, and commercial product sessions.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Miracle Studio Home">
+        <svg class="logo-aperture" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="46" stroke="#d4af37" stroke-width="5" fill="#0d0f12"/>
+          <polygon points="50,20 62,38 42,46" fill="#c5a880"/>
+          <polygon points="76,35 68,55 52,43" fill="#d4af37"/>
+          <polygon points="80,65 60,68 58,49" fill="#c5a880"/>
+          <polygon points="50,80 38,62 58,54" fill="#d4af37"/>
+          <polygon points="24,65 32,45 48,57" fill="#c5a880"/>
+          <polygon points="20,35 40,32 42,51" fill="#d4af37"/>
+          <circle cx="50" cy="50" r="8" fill="#d4af37"/>
+        </svg>
+        <span class="logo-text">Miracle <span>Studio</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileNav" class="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+      <li><a href="packages.html" class="mobile-nav-link">Packages</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="reviews.html" class="mobile-nav-link">Reviews</a></li>
+      <li><a href="booking.html" class="mobile-nav-link active">Booking</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book a Photoshoot</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-bottom: 2rem; background: var(--primary-color);">
+      <div class="container text-center" style="text-align: center;">
+        <span class="section-subtitle">Reservations</span>
+        <h1 class="section-title">Book a Photoshoot</h1>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          Tell us about your requested dates, photography service, and location. Our studio team will review your enquiry and respond promptly.
+        </p>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="section">
+      <div class="container">
+        
+        <div class="form-container">
+          <!-- Dynamic Success Banner -->
+          <div id="bookingSuccess" class="form-success-banner" role="alert"></div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-grid">
+
+              <!-- Full Name (Required) -->
+              <div class="form-group">
+                <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  class="form-control" 
+                  placeholder="e.g. Eleanor Vance" 
+                  required 
+                />
+                <span id="fullNameError" class="feedback-msg">Full Name is required.</span>
+              </div>
+
+              <!-- Phone Number (Required) -->
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number <span class="req">*</span></label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  class="form-control" 
+                  placeholder="e.g. +1 555-0199" 
+                  required 
+                />
+                <span id="phoneError" class="feedback-msg">Valid phone number is required.</span>
+              </div>
+
+              <!-- Email (Optional, Format Validated) -->
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-control" 
+                  placeholder="e.g. eleanor@example.com" 
+                />
+                <span id="emailError" class="feedback-msg">Please enter a valid email address.</span>
+              </div>
+
+              <!-- Photography Service (Required) -->
+              <div class="form-group">
+                <label for="serviceField" class="form-label">Photography Service <span class="req">*</span></label>
+                <select id="serviceField" name="serviceField" class="form-control" required>
+                  <option value="">-- Select a Service --</option>
+                  <option value="Wedding Photography">Wedding Photography</option>
+                  <option value="Pre-Wedding Photography">Pre-Wedding Photography</option>
+                  <option value="Birthday Photography">Birthday Photography</option>
+                  <option value="Baby & Kids Photography">Baby & Kids Photography</option>
+                  <option value="Portrait Photography">Portrait Photography</option>
+                  <option value="Engagement Photography">Engagement Photography</option>
+                  <option value="Event Photography">Event Photography</option>
+                  <option value="Product Photography">Product Photography (Client Products)</option>
+                  <option value="Maternity Photography">Maternity Photography</option>
+                  <option value="Traditional Photography">Traditional Photography</option>
+                </select>
+                <span id="serviceFieldError" class="feedback-msg">Please select a photography service.</span>
+              </div>
+
+              <!-- Package (Dropdown) -->
+              <div class="form-group">
+                <label for="packageField" class="form-label">Preferred Package</label>
+                <select id="packageField" name="packageField" class="form-control">
+                  <option value="">-- Optional / Custom Consultation --</option>
+                  <option value="Essential Portrait Session">Essential Portrait Session</option>
+                  <option value="Celebration & Event Collection">Celebration & Event Collection</option>
+                  <option value="Grand Wedding Heritage">Grand Wedding Heritage</option>
+                  <option value="Commercial Product Shoot">Commercial Product Shoot</option>
+                  <option value="Custom Photography Package">Custom Photography Package</option>
+                </select>
+              </div>
+
+              <!-- Event Date (Required) -->
+              <div class="form-group">
+                <label for="eventDate" class="form-label">Event / Shoot Date <span class="req">*</span></label>
+                <input 
+                  type="date" 
+                  id="eventDate" 
+                  name="eventDate" 
+                  class="form-control" 
+                  required 
+                />
+                <span id="eventDateError" class="feedback-msg">Please pick an event or photoshoot date.</span>
+              </div>
+
+              <!-- Event Location -->
+              <div class="form-group full-width">
+                <label for="eventLocation" class="form-label">Event Location / Venue</label>
+                <input 
+                  type="text" 
+                  id="eventLocation" 
+                  name="eventLocation" 
+                  class="form-control" 
+                  placeholder="e.g. Grand Horizon Ballroom / Outdoor Beach / Studio" 
+                />
+              </div>
+
+              <!-- Client Address (Optional) -->
+              <div class="form-group full-width">
+                <label for="address" class="form-label">Client Address / City</label>
+                <input 
+                  type="text" 
+                  id="address" 
+                  name="address" 
+                  class="form-control" 
+                  placeholder="e.g. Metro City, State" 
+                />
+              </div>
+
+              <!-- Additional Message -->
+              <div class="form-group full-width">
+                <label for="message" class="form-label">Additional Message / Special Requests</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  class="form-control" 
+                  rows="4" 
+                  placeholder="Share details about your celebration, timing, family size, or special requirements..."
+                ></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" id="submitBookingBtn" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 1rem;">
+              Submit Booking Request
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ASSURANCE SECTION -->
+    <section class="section" style="background: var(--primary-color);">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <span class="section-subtitle">Privacy & Confirmation</span>
+        <h3 style="margin-bottom: 1rem;">What happens after you submit?</h3>
+        <p style="margin-bottom: 1.5rem;">
+          1. Your booking request is logged securely with a status of <strong>Pending</strong>.<br>
+          2. Our studio coordinator reviews our camera team calendar for your selected date.<br>
+          3. We will call or WhatsApp you within 24 hours to confirm availability and discuss custom package details.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          * Miracle Studio respects your privacy. Your contact details are used exclusively for coordinating your photoshoot.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-text">Miracle <span>Studio</span></span>
+          </div>
+          <p>Professional photography services across weddings, portraits, celebrations, and commercial product imagery.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Booking</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html?service=Wedding+Photography">Book Wedding</a></li>
+            <li><a href="booking.html?service=Portrait+Photography">Book Portrait</a></li>
+            <li><a href="booking.html?service=Event+Photography">Book Event</a></li>
+            <li><a href="booking.html?service=Product+Photography">Book Product Shoot</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Assistance</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Need immediate help? Open our AI Assistant on the bottom right!</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Miracle Studio Photography. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reviews | Miracle Studio</title>
+  <meta name="description" content="Read verified client reviews and feedback for Miracle Studio Photography services across weddings, portraits, celebrations, and events.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Miracle Studio Home">
+        <svg class="logo-aperture" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="46" stroke="#d4af37" stroke-width="5" fill="#0d0f12"/>
+          <polygon points="50,20 62,38 42,46" fill="#c5a880"/>
+          <polygon points="76,35 68,55 52,43" fill="#d4af37"/>
+          <polygon points="80,65 60,68 58,49" fill="#c5a880"/>
+          <polygon points="50,80 38,62 58,54" fill="#d4af37"/>
+          <polygon points="24,65 32,45 48,57" fill="#c5a880"/>
+          <polygon points="20,35 40,32 42,51" fill="#d4af37"/>
+          <circle cx="50" cy="50" r="8" fill="#d4af37"/>
+        </svg>
+        <span class="logo-text">Miracle <span>Studio</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileNav" class="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+      <li><a href="packages.html" class="mobile-nav-link">Packages</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="reviews.html" class="mobile-nav-link active">Reviews</a></li>
+      <li><a href="booking.html" class="mobile-nav-link">Booking</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book a Photoshoot</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-bottom: 2rem; background: var(--primary-color);">
+      <div class="container text-center" style="text-align: center;">
+        <span class="section-subtitle">Customer Feedback</span>
+        <h1 class="section-title">Client Reviews</h1>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          Honest feedback and ratings from clients. We only display approved reviews to maintain integrity and trust.
+        </p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem;">
+          * Development sample reviews are clearly tagged with <span class="badge badge-demo" style="font-size: 0.65rem;">Demo Review</span>.
+        </p>
+      </div>
+    </section>
+
+    <!-- REVIEWS GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="reviews-grid">
+
+          <!-- Review 1 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "The photography team was courteous, punctual, and attentive to our family during our event. The captured emotions look wonderful."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client A.</div>
+                <div class="review-date">February 14, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Exceptional attention to lighting and candid expressions for our pre-wedding photoshoot. The delivery timeline was honored without delay."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client B.</div>
+                <div class="review-date">March 1, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★☆</div>
+              <p class="review-text">
+                "Very professional product photography shoot for our catalog. Colors matched our samples precisely and angles were sharp."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client C.</div>
+                <div class="review-date">March 10, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <!-- Review 4 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Handled our baby milestone shoot with immense patience and gentleness. The keepsake album is truly treasured by our family."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client D.</div>
+                <div class="review-date">March 22, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <!-- Review 5 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Our traditional ceremony photos turned out vibrant and full of life. Every key ritual was respected and beautifully framed."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client E.</div>
+                <div class="review-date">April 4, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <!-- Review 6 -->
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "The maternity portraits were breathtaking. The soft lighting made me feel completely comfortable and celebrated."
+              </p>
+            </div>
+            <div class="review-author">
+              <div>
+                <div class="author-name">Client F.</div>
+                <div class="review-date">April 18, 2026</div>
+              </div>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container cta-banner-content">
+        <h2 class="cta-title">Create Your Own Beautiful Memories</h2>
+        <p class="cta-desc">
+          Join our satisfied clients. Book your date today and let us preserve your story in fine art imagery.
+        </p>
+        <a href="booking.html" class="btn btn-primary">Book Your Photoshoot</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-text">Miracle <span>Studio</span></span>
+          </div>
+          <p>Professional photography services across weddings, portraits, celebrations, and commercial product imagery.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Quality Standard</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            All client reviews are submitted and verified before approval to ensure genuine feedback.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">Booking</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Ready to schedule your session?</p>
+          <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Miracle Studio Photography. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

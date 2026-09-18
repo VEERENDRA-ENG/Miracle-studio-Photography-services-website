@@ -1,0 +1,266 @@
+/* ==========================================================================
+   MIRACLE STUDIO PHOTOGRAPHY - GLOBAL DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Cinematic Luxury Dark & Champagne Gold */
+  --primary-color: #0b0d10;       /* Deep rich obsidian black */
+  --secondary-color: #14181f;     /* Elevated dark slate */
+  --surface-color: #1a202a;       /* Card & element surface */
+  --surface-hover: #222a36;       /* Interactive hover surface */
+  --border-color: rgba(212, 175, 55, 0.15); /* Delicate gold outline */
+  --border-subtle: rgba(255, 255, 255, 0.08); /* Soft separator */
+
+  --accent-color: #c5a880;        /* Elegant warm beige-gold */
+  --accent-gold: #d4af37;         /* Radiant rich gold */
+  --accent-light: #f3e5ab;        /* Soft highlight */
+  --accent-glow: rgba(212, 175, 55, 0.25);
+
+  --background-color: #08090b;    /* Base page background */
+  --text-color: #f1f3f7;          /* High-contrast readable off-white */
+  --text-secondary: #9aa2b1;      /* Secondary descriptive text */
+  --text-muted: #677184;          /* Hints, timestamps, footnotes */
+
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --warning-color: #f39c12;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --container-max-width: 1240px;
+  --section-padding: 5.5rem 1.5rem;
+  --section-padding-mobile: 3.5rem 1rem;
+  --header-height: 80px;
+
+  /* Elevation / Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 8px 28px rgba(212, 175, 55, 0.18);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.85rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Reusable Layout Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+  }
+}
+
+/* Base Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Primary Button - Radiant Gold Accent */
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #b89428 100%);
+  color: #0b0d10;
+  border-color: #e5c358;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e5c358 0%, #d4af37 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Secondary Button - Glass Outline */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Outline Subtle */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-color);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.btn-outline:hover {
+  background: rgba(197, 168, 128, 0.15);
+  border-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* Subtle Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--accent-color);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.badge-demo {
+  background: rgba(243, 156, 18, 0.12);
+  color: #f39c12;
+  border-color: rgba(243, 156, 18, 0.28);
+}
+
+/* Section Wrapper */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+}
+
+/* Subtle Shimmer Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252d3a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
