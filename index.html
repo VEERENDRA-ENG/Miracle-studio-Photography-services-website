@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miracle Studio Photography | Professional Photography Studio</title>
+  <meta name="description"
+    content="Capturing Your Beautiful Moments. Professional photography for weddings, celebrations, portraits, events and life's special moments.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Supabase CDN (Optional for live DB connectivity) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Miracle Studio Home">
+        <svg class="logo-aperture" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="46" stroke="#d4af37" stroke-width="5" fill="#0d0f12" />
+          <polygon points="50,20 62,38 42,46" fill="#c5a880" />
+          <polygon points="76,35 68,55 52,43" fill="#d4af37" />
+          <polygon points="80,65 60,68 58,49" fill="#c5a880" />
+          <polygon points="50,80 38,62 58,54" fill="#d4af37" />
+          <polygon points="24,65 32,45 48,57" fill="#c5a880" />
+          <polygon points="20,35 40,32 42,51" fill="#d4af37" />
+          <circle cx="50" cy="50" r="8" fill="#d4af37" />
+        </svg>
+        <span class="logo-text">Miracle <span>Studio</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobileNav" class="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+      <li><a href="packages.html" class="mobile-nav-link">Packages</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="reviews.html" class="mobile-nav-link">Reviews</a></li>
+      <li><a href="booking.html" class="mobile-nav-link">Booking</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book a Photoshoot</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge badge-gold">Professional Photography Studio</span>
+        </div>
+        <h1 class="hero-title">Miracle Studio Photography</h1>
+        <p class="hero-tagline">"Capturing Your Beautiful Moments"</p>
+        <p class="hero-description">
+          Professional photography for weddings, celebrations, portraits, events and life's special moments.
+        </p>
+        <div class="hero-buttons">
+          <a href="booking.html" class="btn btn-primary">Book a Photoshoot</a>
+          <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
+        </div>
+        <p class="hero-placeholder-note">
+          * Images shown are demonstration placeholders illustrating photography compositions.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: FEATURED SERVICES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">What We Offer</span>
+          <h2 class="section-title">Featured Photography Services</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            Explore our core photography specialties crafted to celebrate your life stories with cinematic precision.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                alt="Wedding Photography Demo" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Wedding Photography</h3>
+              <p class="service-card-desc">
+                Cinematic coverage capturing the emotion, grandeur, and intimate moments of your wedding day.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Featured Service</span>
+                <a href="booking.html?service=Wedding" class="btn btn-outline" style="padding: 0.5rem 1rem;">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+                alt="Pre-Wedding Photography Demo" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Pre-Wedding Photography</h3>
+              <p class="service-card-desc">
+                Romantic outdoor and stylized conceptual photoshoots celebrating your unique journey together.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Featured Service</span>
+                <a href="booking.html?service=Pre-Wedding" class="btn btn-outline"
+                  style="padding: 0.5rem 1rem;">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                alt="Portrait Photography Demo" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Portrait Photography</h3>
+              <p class="service-card-desc">
+                Professional executive portraits, creative artistic headshots, and personal profile branding.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Featured Service</span>
+                <a href="booking.html?service=Portrait" class="btn btn-outline"
+                  style="padding: 0.5rem 1rem;">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80"
+                alt="Baby and Kids Photography Demo" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Baby & Kids Photography</h3>
+              <p class="service-card-desc">
+                Tender baby portraits, toddler giggles, and playful childhood memories in safe studio environments.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Featured Service</span>
+                <a href="booking.html?service=Baby+%26+Kids" class="btn btn-outline"
+                  style="padding: 0.5rem 1rem;">Enquire</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="services.html" class="btn btn-secondary">View All 10 Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT MIRACLE STUDIO TEASER -->
+    <section class="section" style="background: var(--primary-color);">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-image-wrap">
+            <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=900&q=80"
+              alt="Photography Studio Equipment Demo" loading="lazy" />
+          </div>
+          <div>
+            <span class="section-subtitle">Our Philosophy</span>
+            <h2 class="section-title">About Miracle Studio</h2>
+            <div class="section-divider" style="margin-left: 0;"></div>
+            <p style="margin-bottom: 1.25rem;">
+              At Miracle Studio Photography, we believe every photograph is a timeless keepsake. Whether documenting the
+              grandeur of a wedding day, tender family milestones, or fine art portraits, our focus is on genuine
+              emotions and masterclass composition.
+            </p>
+            <p style="margin-bottom: 2rem;">
+              We operate with modern high-resolution equipment, gentle direction, and subtle lighting to bring out
+              authentic expressions naturally.
+            </p>
+            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FEATURED PORTFOLIO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Visual Highlights</span>
+          <h2 class="section-title">Selected Portfolio Moments</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            A glimpse of our creative captures across ceremonies, celebrations, and studio sessions.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+              alt="Wedding Vows Demo" loading="lazy" />
+            <div class="portfolio-item-overlay">
+              <span class="portfolio-category-tag">Wedding</span>
+              <h3 class="portfolio-item-title">Sunset Ocean Vows</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+              alt="Pre-Wedding Demo" loading="lazy" />
+            <div class="portfolio-item-overlay">
+              <span class="portfolio-category-tag">Pre-Wedding</span>
+              <h3 class="portfolio-item-title">Whispers in the Hills</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+              alt="Product Photography Demo" loading="lazy" />
+            <div class="portfolio-item-overlay">
+              <span class="portfolio-category-tag">Product Photography</span>
+              <h3 class="portfolio-item-title">Commercial Timepiece Shoot</h3>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="portfolio.html" class="btn btn-primary">View Full Portfolio Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PACKAGES OVERVIEW -->
+    <section class="section" style="background: var(--primary-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Tailored Collections</span>
+          <h2 class="section-title">Photography Packages</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            Thoughtfully packaged collections designed to suit individual sessions, events, and weddings.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <div class="card package-card">
+            <h3 class="package-name">Essential Portrait</h3>
+            <p class="package-desc">Ideal for personal headshots, profile branding, and creative sessions.</p>
+            <div class="package-price-wrap">
+              <div class="package-price">Contact for Price</div>
+              <div class="package-duration">Duration: 1 to 2 Hours</div>
+            </div>
+            <ul class="package-features">
+              <li>15 retouched digital images</li>
+              <li>Single studio or outdoor location</li>
+              <li>Private online preview gallery</li>
+            </ul>
+            <a href="booking.html?package=Essential+Portrait" class="btn btn-outline">Enquire Now</a>
+          </div>
+
+          <div class="card package-card highlight">
+            <span class="badge badge-gold" style="position: absolute; top: 1rem; right: 1rem;">Popular</span>
+            <h3 class="package-name">Celebration Collection</h3>
+            <p class="package-desc">Comprehensive coverage for birthdays, engagements, and ceremonies.</p>
+            <div class="package-price-wrap">
+              <div class="package-price">Contact for Price</div>
+              <div class="package-duration">Duration: 3 to 5 Hours</div>
+            </div>
+            <ul class="package-features">
+              <li>Candid party and guest captures</li>
+              <li>High-resolution digital delivery</li>
+              <li>Fast 48-hour preview highlights</li>
+            </ul>
+            <a href="booking.html?package=Celebration+Collection" class="btn btn-primary">Enquire Now</a>
+          </div>
+
+          <div class="card package-card">
+            <h3 class="package-name">Grand Wedding</h3>
+            <p class="package-desc">Complete multi-day or full-day coverage capturing sacred moments.</p>
+            <div class="package-price-wrap">
+              <div class="package-price">Contact for Price</div>
+              <div class="package-duration">Full Day Coverage</div>
+            </div>
+            <ul class="package-features">
+              <li>Lead photographer + team</li>
+              <li>Pre-wedding session included</li>
+              <li>Handcrafted luxury keepsake album</li>
+            </ul>
+            <a href="booking.html?package=Grand+Wedding" class="btn btn-outline">Enquire Now</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="packages.html" class="btn btn-secondary">View All Packages</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHY CHOOSE US -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Our Commitments</span>
+          <h2 class="section-title">Why Choose Miracle Studio</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            Simple, honest commitments to quality and customer satisfaction on every shoot.
+          </p>
+        </div>
+
+        <div class="feature-cards-grid">
+          <div class="card feature-card">
+            <div class="feature-icon">📷</div>
+            <h3 class="feature-title">High-Definition Gear</h3>
+            <p>We utilize modern cameras, prime lenses, and professional studio lighting setups.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 class="feature-title">Artistic Direction</h3>
+            <p>Gentle guidance during poses to ensure natural expressions without feeling stiff.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3 class="feature-title">Master Color Grading</h3>
+            <p>Every chosen photograph is color balanced and meticulously retouched.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3 class="feature-title">Timely Delivery</h3>
+            <p>Dependable turnaround times with accessible digital download galleries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CUSTOMER REVIEWS -->
+    <section class="section" style="background: var(--primary-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Client Experiences</span>
+          <h2 class="section-title">Customer Reviews</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            Reviews from clients who trusted us with their special celebrations.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "The photography team was courteous, punctual, and attentive to our family during our event. The
+                captured emotions look wonderful."
+              </p>
+            </div>
+            <div class="review-author">
+              <span class="author-name">Client A.</span>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                "Exceptional attention to lighting and candid expressions for our pre-wedding photoshoot. The delivery
+                timeline was honored."
+              </p>
+            </div>
+            <div class="review-author">
+              <span class="author-name">Client B.</span>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+
+          <article class="card review-card">
+            <div>
+              <div class="review-stars">★★★★☆</div>
+              <p class="review-text">
+                "Very professional product photography shoot for our catalog. Colors matched our samples precisely and
+                angles were sharp."
+              </p>
+            </div>
+            <div class="review-author">
+              <span class="author-name">Client C.</span>
+              <span class="badge badge-demo">Demo Review</span>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="reviews.html" class="btn btn-secondary">Read More Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: BOOKING CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container cta-banner-content">
+        <span class="section-subtitle">Reserve Your Date</span>
+        <h2 class="cta-title">Let's Capture Your Special Moments</h2>
+        <p class="cta-desc">
+          Ready to schedule your wedding, family milestone, or commercial shoot? Let's connect and discuss your vision.
+        </p>
+        <a href="booking.html" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2.25rem;">
+          Book Your Photoshoot
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-text">Miracle <span>Studio</span></span>
+          </div>
+          <p>
+            Professional photography studio dedicated to capturing the moments that matter most. Weddings, portraits,
+            celebrations, and commercial product imagery.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Wedding Photography</a></li>
+            <li><a href="services.html">Pre-Wedding</a></li>
+            <li><a href="services.html">Portrait Sessions</a></li>
+            <li><a href="services.html">Product Photography</a></li>
+            <li><a href="services.html">Maternity & Kids</a></li>
+            <li><a href="services.html">Event Photography</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Studio Hours</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Mon - Sat: 9:30 AM – 7:30 PM</p>
+          <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">Sunday: By Appointment</p>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;">Book Photoshoot</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Miracle Studio Photography. All rights reserved. Professional Photography Services.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/supabase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+
+</html>

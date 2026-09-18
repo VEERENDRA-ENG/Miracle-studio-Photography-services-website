@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Services | Miracle Studio</title>
+  <meta name="description" content="Explore professional photography services by Miracle Studio: Wedding, Pre-Wedding, Portrait, Maternity, Product Photography, and more.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Miracle Studio Home">
+        <svg class="logo-aperture" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="46" stroke="#d4af37" stroke-width="5" fill="#0d0f12"/>
+          <polygon points="50,20 62,38 42,46" fill="#c5a880"/>
+          <polygon points="76,35 68,55 52,43" fill="#d4af37"/>
+          <polygon points="80,65 60,68 58,49" fill="#c5a880"/>
+          <polygon points="50,80 38,62 58,54" fill="#d4af37"/>
+          <polygon points="24,65 32,45 48,57" fill="#c5a880"/>
+          <polygon points="20,35 40,32 42,51" fill="#d4af37"/>
+          <circle cx="50" cy="50" r="8" fill="#d4af37"/>
+        </svg>
+        <span class="logo-text">Miracle <span>Studio</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileNav" class="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link active">Services</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+      <li><a href="packages.html" class="mobile-nav-link">Packages</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="reviews.html" class="mobile-nav-link">Reviews</a></li>
+      <li><a href="booking.html" class="mobile-nav-link">Booking</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book a Photoshoot</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-bottom: 2rem; background: var(--primary-color);">
+      <div class="container text-center" style="text-align: center;">
+        <span class="section-subtitle">Our Expertise</span>
+        <h1 class="section-title">Photography Services</h1>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          Miracle Studio provides 10 specialized photography services. Each service is tailored to deliver cinematic, high-resolution visual storytelling for your special moments.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES GRID SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+
+          <!-- 1. Wedding Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">1. Wedding Photography</h3>
+              <p class="service-card-desc">
+                Cinematic coverage capturing the emotion, grandeur, and intimate moments of your wedding day with candid and ritual photography.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Wedding Specialty</span>
+                <a href="booking.html?service=Wedding+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Pre-Wedding Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" alt="Pre-Wedding Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">2. Pre-Wedding Photography</h3>
+              <p class="service-card-desc">
+                Romantic outdoor and stylized conceptual photoshoots celebrating your unique love story prior to the wedding day.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Romantic Outdoor</span>
+                <a href="booking.html?service=Pre-Wedding+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Birthday Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Birthday Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">3. Birthday Photography</h3>
+              <p class="service-card-desc">
+                Vibrant celebrations, milestone moments, cake cutting, and joyous party candid captures for all age milestones.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Celebration</span>
+                <a href="booking.html?service=Birthday+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Baby & Kids Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Baby and Kids Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">4. Baby & Kids Photography</h3>
+              <p class="service-card-desc">
+                Tender baby portraits, toddler giggles, and playful childhood memories conducted in safe, sanitized studio environments.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Studio & Home</span>
+                <a href="booking.html?service=Baby+%26+Kids+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Portrait Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Portrait Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">5. Portrait Photography</h3>
+              <p class="service-card-desc">
+                Professional executive portraits, creative artistic headshots, and personal profile branding with tailored studio lighting.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Studio Session</span>
+                <a href="booking.html?service=Portrait+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Engagement Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Engagement Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">6. Engagement Photography</h3>
+              <p class="service-card-desc">
+                Capturing the proposal thrill, ring exchange ceremony, and intimate couple portraits with ambient lighting.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Ceremony</span>
+                <a href="booking.html?service=Engagement+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Event Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Event Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">7. Event Photography</h3>
+              <p class="service-card-desc">
+                Comprehensive coverage for corporate galas, seminars, cultural gatherings, and milestone anniversary events.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Corporate & Private</span>
+                <a href="booking.html?service=Event+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Product Photography (Commercial shoots for client products) -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Product Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">8. Product Photography</h3>
+              <p class="service-card-desc">
+                Commercial photography service for client merchandise, e-commerce catalogs, and advertising campaigns.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Commercial Shoot</span>
+                <a href="booking.html?service=Product+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Maternity Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Maternity Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">9. Maternity Photography</h3>
+              <p class="service-card-desc">
+                Empowering maternity sessions celebrating motherhood with soft ethereal lighting, gentle poses, and fine art elegance.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Fine Art Maternity</span>
+                <a href="booking.html?service=Maternity+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Traditional Photography -->
+          <article class="card service-card">
+            <div class="service-card-image">
+              <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Traditional Photography" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">10. Traditional Photography</h3>
+              <p class="service-card-desc">
+                Timeless cultural rituals, heritage ceremonies, and formal multi-generational family portraiture captured with dignity.
+              </p>
+              <div class="service-card-footer">
+                <span class="badge badge-gold">Cultural & Heritage</span>
+                <a href="booking.html?service=Traditional+Photography" class="btn btn-primary" style="padding: 0.5rem 1.15rem;">Book / Enquire</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+      <div class="container cta-banner-content">
+        <h2 class="cta-title">Need a Custom Photography Quote?</h2>
+        <p class="cta-desc">
+          Whether you need a full wedding package or an individual portrait shoot, we are here to tailor a session for you.
+        </p>
+        <a href="booking.html" class="btn btn-primary">Submit Booking Enquiry</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-text">Miracle <span>Studio</span></span>
+          </div>
+          <p>Professional photography services across weddings, portraits, celebrations, and commercial product imagery.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Wedding Photography</a></li>
+            <li><a href="services.html">Portrait Photography</a></li>
+            <li><a href="services.html">Product Photography</a></li>
+            <li><a href="services.html">Event Photography</a></li>
+            <li><a href="services.html">Maternity Photography</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Get in Touch</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Ready to schedule your session?</p>
+          <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;">Book Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Miracle Studio Photography. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
